@@ -1,7 +1,7 @@
 mod solutions;
 mod utils;
 
-use std::fmt::Display;
+use std::fmt::Debug;
 
 use utils::*;
 
@@ -25,16 +25,16 @@ impl Question {
     }
 }
 
-fn runner<T: Display>(solver: &dyn Fn(&str) -> T, input: &str) -> T {
+fn runner<T: Debug>(solver: &dyn Fn(&str) -> T, input: &str) -> T {
     solver(input)
 }
 
 fn main() {
-    let question = Question::init(1);
+    let question = Question::init(2);
 
     let input = question.part1();
 
-    let result = runner(&solutions::day1::part2, &input);
+    let result = runner(&solutions::day2::part2, &input);
 
-    print!("result = {}\n", result)
+    print!("result = {:?}\n", result)
 }
