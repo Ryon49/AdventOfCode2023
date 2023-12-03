@@ -20,7 +20,7 @@ fn find_first_digit(_input: &str) -> u32 {
 
 // for part1, we simply just convert each line into first digit and last digit first, and sum them
 #[allow(dead_code)]
-pub fn part1(_input: &str) -> String {
+pub fn part1(_input: &str) -> u32 {
     let result: u32 = _input
         .split("\n") // Split by newline character
         .map(|line| -> u32 {
@@ -31,7 +31,7 @@ pub fn part1(_input: &str) -> String {
             return first * 10 + last;
         }) // extract first and last digit from each line
         .sum(); //
-    return result.to_string();
+    return result;
 }
 
 fn process_line(_input: &str) -> String {
@@ -59,7 +59,7 @@ fn process_line(_input: &str) -> String {
 // for part2, the idea is the same, the only extra work is to recognize the letter digits,
 // so for eaiser to understand, I want to rewrite each line to its proper form and then use part1 to solve
 #[allow(dead_code)]
-pub fn part2(_input: &str) -> String {
+pub fn part2(_input: &str) -> u32 {
     let result: u32 = _input
         .split("\n") 
         .map(process_line) // this is the new change
@@ -72,5 +72,5 @@ pub fn part2(_input: &str) -> String {
         }) // extract first and last digit from each line
         .sum(); //
 
-    return result.to_string();
+    return result;
 }
