@@ -198,3 +198,7 @@ fn print_map(m: i32, n: i32, leak_map: &Vec<Vec<bool>>, tiles: &Vec<Vec<char>>) 
         println!()
     }
 }
+
+// PART 2 new idea:
+// based on day11, expand tiles and append a new line in between every pair of rows and coloumns.
+// The value of the new line depends on if every (c1, c2) in pairs of row/column will create a wall.
