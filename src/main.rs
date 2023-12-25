@@ -30,11 +30,11 @@ fn runner<T: Debug>(solver: &dyn Fn(&str) -> T, input: &str) -> T {
 }
 
 fn main() {
-    let question = Question::init(2);
-
+    let day = 23;
+    let question = Question::init(day);
     let input = question.part1();
 
-    let result = runner(&solutions::day2::part2, &input);
+    let result = runner(&solutions::day23::part2, &input);
 
     print!("result = {:?}\n", result)
 }
